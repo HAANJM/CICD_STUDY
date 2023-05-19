@@ -1,0 +1,5 @@
+package com.ssafy.ssafitlog.config;
+
+public class DBConfig {
+
+}

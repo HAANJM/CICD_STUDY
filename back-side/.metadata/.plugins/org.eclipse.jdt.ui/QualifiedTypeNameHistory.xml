@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.annotation.MapperScan"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurer"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.EnableWebMvc"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.CorsRegistry"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.BoardDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.ExpDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.FollowDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.LikeDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.ReviewDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dao.UserDao"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.BoardService"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.ExpService"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.FollowService"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.LikeService"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.ReviewService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.UserService"/>
+</qualifiedTypeNameHistroy>

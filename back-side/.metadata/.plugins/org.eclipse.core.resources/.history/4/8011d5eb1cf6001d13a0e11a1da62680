@@ -1,0 +1,5 @@
+package com.ssafy.ssafitlog.controller;
+
+public class FollowController {
+
+}
