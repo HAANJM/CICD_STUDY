@@ -40,7 +40,7 @@ public class EmailUtil {
 		prop.put("mail.smtp.auth", "true");
 		// 발신자 메일이 네이버일때는 아래 두 줄을 포함시키면 안된다
 		// 발신자 메일이 구글일때는 아래 두 줄을 포함시켜야한다!
-		// prop.put("mail.smtp.ssl.enable", "true");
+//		 prop.put("mail.smtp.ssl.enable", "true");
 		// prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
 		// 3. SMTP 서버정보와 사용자 정보를 기반으로 Session 클래스의 인스턴스 생성

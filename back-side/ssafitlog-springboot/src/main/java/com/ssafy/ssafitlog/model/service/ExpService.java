@@ -11,7 +11,7 @@ import com.ssafy.ssafitlog.model.dto.StricExpDiff;
 public interface ExpService {
 	boolean registExp(Exp exp);
 	
-	int modifyStricExp(StricExpDiff exp);
+	int modifyStricExp(StricExpDiff stricExpDiff);
 	
 	boolean modifyReviewExp(Exp exp);
 	

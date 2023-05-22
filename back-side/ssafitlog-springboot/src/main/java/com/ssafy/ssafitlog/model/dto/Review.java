@@ -7,7 +7,7 @@ public class Review {
 	private String regDate; // 리뷰 등록 날짜
 	private String reviewContent;
 	private int reviewScore; // 리뷰가 부여한 평가 점수, -1, 0 ,1로 구성
-	private int status; // 리뷰 상태, 0 = 일반 댓글, 1 = 평가 댓글 (점수 부여 가능)
+	private int reviewStatus; // 리뷰 상태, 0 = 일반 댓글, 1 = 평가 댓글 (점수 부여 가능)
 	
 	public Review() {};
 	
@@ -47,18 +47,37 @@ public class Review {
 	public void setReviewScore(int reviewScore) {
 		this.reviewScore = reviewScore;
 	}
-	public int getStatus() {
-		return status;
-	}
-	public void setStatus(int status) {
-		this.status = status;
-	}
+
 	
+
+	public int getReviewStatus() {
+		return reviewStatus;
+	}
+
+	public void setReviewStatus(int reviewStatus) {
+		this.reviewStatus = reviewStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "Review [reviewNumber=" + reviewNumber + ", boardNumber=" + boardNumber + ", userId=" + userId
 				+ ", regDate=" + regDate + ", reviewContent=" + reviewContent + ", reviewScore=" + reviewScore
-				+ ", status=" + status + "]";
+				+ ", reviewStatus=" + reviewStatus + "]";
 	}
+	
+	
+//	public int getStatus() {
+//		return status;
+//	}
+//	public void setStatus(int status) {
+//		this.status = status;
+//	}
+//	
+//	@Override
+//	public String toString() {
+//		return "Review [reviewNumber=" + reviewNumber + ", boardNumber=" + boardNumber + ", userId=" + userId
+//				+ ", regDate=" + regDate + ", reviewContent=" + reviewContent + ", reviewScore=" + reviewScore
+//				+ ", status=" + status + "]";
+//	}
 	
 }

@@ -3,6 +3,7 @@ package com.ssafy.ssafitlog.model.service;
 import java.util.List;
 
 import com.ssafy.ssafitlog.model.dto.Board;
+import com.ssafy.ssafitlog.model.dto.Favorite;
 import com.ssafy.ssafitlog.model.dto.ReviewContainBoard;
 import com.ssafy.ssafitlog.model.dto.SearchCondition;
 
@@ -14,7 +15,7 @@ public interface BoardService {
 	
 	boolean deleteBoard(Board board);
 	
-	List<Board> searchBoardByLike(SearchCondition condition);
+	List<Board> searchBoardByFavorite(SearchCondition condition);
 	
 	List<Board> searchBoardByFollow(SearchCondition condition);
 	
@@ -31,4 +32,8 @@ public interface BoardService {
 	Board searchBoardDetail(int boardNumber);
 	
 	boolean modifyScoreCount(ReviewContainBoard reviewContainBoard);
+	
+	boolean upFavoriteCount(Favorite favorite);
+	
+	boolean downFavoriteCount(Favorite favorite);
 }

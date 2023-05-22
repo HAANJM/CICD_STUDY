@@ -13,12 +13,12 @@ public class User {
 	private int totalExp;
 	private int level;
 	private String tier;
-	private String status;
+	private String userUserStatus;
 	public User() {
 		super();
 	}
 	public User(String userId, String userComment, String img, String oriImg, String password, String email,
-			String nickName, String userName, int totalExp, int level, String tier, String status) {
+			String nickName, String userName, int totalExp, int level, String tier, String userUserStatus) {
 		super();
 		this.userId = userId;
 		this.userComment = userComment;
@@ -31,7 +31,7 @@ public class User {
 		this.totalExp = totalExp;
 		this.level = level;
 		this.tier = tier;
-		this.status = status;
+		this.userUserStatus = userUserStatus;
 	}
 	public String getUserId() {
 		return userId;
@@ -99,17 +99,17 @@ public class User {
 	public void setTier(String tier) {
 		this.tier = tier;
 	}
-	public String getStatus() {
-		return status;
+	public String getUserStatus() {
+		return userUserStatus;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setUserStatus(String userUserStatus) {
+		this.userUserStatus = userUserStatus;
 	}
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userComment=" + userComment + ", img=" + img + ", oriImg=" + oriImg
 				+ ", password=" + password + ", email=" + email + ", nickName=" + nickName + ", userName=" + userName
-				+ ", totalExp=" + totalExp + ", level=" + level + ", tier=" + tier + ", status=" + status + "]";
+				+ ", totalExp=" + totalExp + ", level=" + level + ", tier=" + tier + ", userUserStatus=" + userUserStatus + "]";
 	}
 	
 	

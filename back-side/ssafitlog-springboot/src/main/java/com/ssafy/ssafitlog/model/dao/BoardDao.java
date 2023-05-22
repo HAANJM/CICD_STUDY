@@ -3,6 +3,7 @@ package com.ssafy.ssafitlog.model.dao;
 import java.util.List;
 
 import com.ssafy.ssafitlog.model.dto.Board;
+import com.ssafy.ssafitlog.model.dto.Favorite;
 import com.ssafy.ssafitlog.model.dto.ReviewContainBoard;
 import com.ssafy.ssafitlog.model.dto.SearchCondition;
 
@@ -13,7 +14,7 @@ public interface BoardDao {
 	
 	int deleteBoard(int boardNumber);
 	
-	List<Board> selectBoardByLike(SearchCondition condition);
+	List<Board> selectBoardByFavorite(SearchCondition condition);
 	
 	List<Board> selectBoardByFollow(SearchCondition condition);
 	
@@ -28,4 +29,8 @@ public interface BoardDao {
 	Board selectBoard(int boardNumber);
 	
 	int updateScoreCount(ReviewContainBoard reviewContainBoard);
+	
+	int upFavoriteCount(Favorite favorite);
+	
+	int downFavoriteCount(Favorite favorite);
 }

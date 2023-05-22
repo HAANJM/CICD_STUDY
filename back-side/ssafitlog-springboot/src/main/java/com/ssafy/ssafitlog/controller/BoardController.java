@@ -40,7 +40,7 @@ public class BoardController {
 	
 	@ApiOperation(value="게시글 조회", notes = "검색 조건도 넣으면 같이 가져옴")
 	@GetMapping("")
-	public ResponseEntity<?> searchBoardByCondition(@RequestBody SearchCondition condition) {
+	public ResponseEntity<?> searchBoardByCondition(SearchCondition condition) {
 		List<Board> result = boardService.searchBoardByCondition(condition);
 		return new ResponseEntity<List<Board>>(result, HttpStatus.CREATED);
 	}

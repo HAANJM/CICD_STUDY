@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.ssafitlog.model.dao.UserDao;
+import com.ssafy.ssafitlog.model.dto.StricExpDiff;
 import com.ssafy.ssafitlog.model.dto.User;
 
 @Service
@@ -15,6 +16,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String userId) {
 		return userDao.getUser(userId);
+	}
+	
+	@Override
+	public Integer getUserByEmail(String email) {
+		return userDao.getUserByEmail(email);
 	}
 
 	@Override
@@ -42,4 +48,18 @@ public class UserServiceImpl implements UserService {
 		return userDao.searchUserId(user);
 	}
 
+	@Override
+	public int modifyStricExp(StricExpDiff exp) {
+		return userDao.updateStricExp(exp);
+	}
+
+	@Override
+	public int upReviewExp(StricExpDiff exp) {
+		return userDao.upReviewExp(exp);
+	}
+
+	@Override
+	public int downReviewExp(StricExpDiff exp) {
+		return userDao.downReviewExp(exp);
+	}
 }

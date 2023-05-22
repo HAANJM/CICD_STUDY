@@ -26,7 +26,7 @@ public class JWTTest {
 		System.out.println(new String(Base64.getDecoder().decode(token.split("\\.")[1])));
 		
 		//위에서 설정한 유효기간이 3초이므로 3초 뒤에 다시한번 검사를 해보면 오류가 뜨는걸 확인해보자...
-		Thread.sleep(4000);
+		
 		
 		//유효성 검사
 		Jws<Claims> claims = Jwts.parser().setSigningKey("SSAFIT".getBytes("UTF-8")).parseClaimsJws(token);

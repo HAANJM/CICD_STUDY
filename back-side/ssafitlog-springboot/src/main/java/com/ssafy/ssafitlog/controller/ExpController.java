@@ -37,7 +37,7 @@ public class ExpController {
 	}
 	
 	@ApiOperation(value="경험치 테이블 가져오기", notes = "그래프용")
-	@GetMapping("")
+	@GetMapping("/{userId}")
 	public ResponseEntity<?> searchAllExp(@PathVariable String userId) {
 		List<Exp> result = expService.searchAllExp(userId);
 		return new ResponseEntity<List<Exp>>(result, HttpStatus.OK);

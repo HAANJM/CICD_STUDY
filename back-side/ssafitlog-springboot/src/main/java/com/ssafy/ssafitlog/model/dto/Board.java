@@ -8,7 +8,7 @@ public class Board {
 	private String boardContent;
 	private String link; // 유튜브 링크, 뒤에 키값만 잘라옴
 	private int scoreCount; // 게시판 평가 점수, 해당 게시판 모든 평가점수의 합
-	private int likeCnt; // 좋아요 횟수
+	private int favoriteCnt; // 좋아요 횟수
 	
 	public Board(){};
 	
@@ -54,18 +54,18 @@ public class Board {
 	public void setScoreCount(int scoreCount) {
 		this.scoreCount = scoreCount;
 	}
-	public int getLikeCnt() {
-		return likeCnt;
+	public int getFavoriteCnt() {
+		return favoriteCnt;
 	}
-	public void setLikeCnt(int likeCnt) {
-		this.likeCnt = likeCnt;
+	public void setFavoriteCnt(int favoriteCnt) {
+		this.favoriteCnt = favoriteCnt;
 	}
 
 	@Override
 	public String toString() {
 		return "Board [boardNumber=" + boardNumber + ", userId=" + userId + ", regDate=" + regDate + ", boardTitle="
 				+ boardTitle + ", boardContent=" + boardContent + ", link=" + link + ", scoreCount=" + scoreCount
-				+ ", likeCnt=" + likeCnt + "]";
+				+ ", favoriteCnt=" + favoriteCnt + "]";
 	}
 	
 }

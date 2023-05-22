@@ -4,18 +4,21 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.ssafitlog.model.dao.ExpDao;
 import com.ssafy.ssafitlog.model.dto.Exp;
 import com.ssafy.ssafitlog.model.dto.StricExpDiff;
 
+@Transactional
 @Service
 public class ExpServiceImpl implements ExpService {
 	
 	@Autowired
 	private ExpDao expDao;
 	
-	private int[] stricExpTable = {1, 3, 6, 10, 15}; // scoreCoutSum 크기에 따른 stricExp 레벨
+//	private int[] stricExpTable = {1, 3, 6, 10, 15}; // scoreCoutSum 크기에 따른 stricExp 레벨
+	private int[] stricExpTable = {1, 2, 3, 4, 5}; // scoreCoutSum 크기에 따른 stricExp 레벨
 	private final int EXP = 1; // 레벨 당 경험치
 	
 	@Override
@@ -29,8 +32,8 @@ public class ExpServiceImpl implements ExpService {
 	}
 	
 	@Override
-	public int modifyStricExp(StricExpDiff exp) {
-		return expDao.updateStricExp(exp);
+	public int modifyStricExp(StricExpDiff stricExpDiff) {
+		return expDao.updateStricExp(stricExpDiff);
 	}
 
 	@Override

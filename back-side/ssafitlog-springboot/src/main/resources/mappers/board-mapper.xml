@@ -4,14 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.ssafitlog.model.dao.BoardDao">
   	<insert id="insertBoard" parameterType="Board" keyProperty="boardNumber" useGeneratedKeys="true">
-  		INSERT INTO board (userId, link, scoreCount, boardContent, likeCnt)
-  		VALUE (#{userId}, #{link}, #{scoreCount}, #{boardContent}, #{likeCnt})
+  		INSERT INTO board (userId, link, scoreCount, boardContent, favoriteCnt, boardTitle)
+  		VALUE (#{userId}, #{link}, #{scoreCount}, #{boardContent}, #{favoriteCnt}, #{boardTitle})
   	</insert>
   	
-  	  	<select id="selectBoardByLike" parameterType="SearchCondition" resultType="Board">
+  	  <select id="selectBoardByFavorite" parameterType="SearchCondition" resultType="Board">
   		SELECT *
-  		FROM 'like'
-  		WHERE userId = #{userId} AND DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
+  		FROM board
+  		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY) AND
+  		boardNumber in (SELECT boardNumber FROM favorite WHERE userId = #{userId})
   		ORDER BY regDate
   	</select>
   	
@@ -27,14 +28,14 @@
   		SELECT *
   		FROM board
   		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
-  		ORDER BY regDate
+  		ORDER BY regDate DESC
   	</select>
   	
    	<select id="selectBoardByHot" parameterType="SearchCondition" resultType="Board">
   		SELECT *
   		FROM board
   		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
-  		ORDER BY likeCnt
+  		ORDER BY facoriteCnt DESC
   	</select>
   	
    	<select id="selectBoardByWord" parameterType="SearchCondition" resultType="Board">
@@ -61,7 +62,7 @@
   	<update id="updateBoard" parameterType="Board">
   		UPDATE board
   		SET boardTitle = #{boardTitle}, boardContent = #{boardContent},
-  		link = #{link}, scoreCount = #{scoreCount}, likeCnt = #{likeCnt}
+  		link = #{link}, scoreCount = #{scoreCount}, favoriteCnt = #{favoriteCnt}
   		WHERE boardNumber = #{boardNumber}
   	</update>
   	
@@ -74,10 +75,22 @@
   		UPDATE board
   		SET scoreCount = scoreCount + #{reviewScore}
   		WHERE boardNumber = #{boardNumber}
-  		<selectKey keyProperty="scoreCounttSum" resultType="int" order="AFTER">
+  		<selectKey keyProperty="scoreCountSum" resultType="int" order="AFTER">
   			SELECT SUM(scoreCount)
   			FROM board
   			WHERE DATE(regDate) = DATE(#{boardRegDate}) AND userId = #{boardUserId}
   		</selectKey>
+  	</update>
+  	
+  	<update id="upFavoriteCount" parameterType="Favorite">
+  		UPDATE board
+  		SET favoriteCount = favoriteCount + 1
+  		WHERE boardNumber = #{boardNumber}
+  	</update>
+  	
+  	<update id="downFavoriteCount" parameterType="Favorite">
+  		UPDATE board
+  		SET favoriteCount = favoriteCount - 1
+  		WHERE boardNumber = #{boardNumber}
   	</update>
 </mapper>

@@ -9,7 +9,7 @@ public interface ReviewDao {
 	
 	List<Review> selectReviewAll(int boardNumber);
 	
-	Review selectReivew(int reviewNumber);
+	Review selectReview(int reviewNumber);
 	
 	int updateReview(Review review);
 	

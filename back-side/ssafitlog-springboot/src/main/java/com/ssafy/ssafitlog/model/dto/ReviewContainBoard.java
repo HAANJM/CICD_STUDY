@@ -3,7 +3,7 @@ package com.ssafy.ssafitlog.model.dto;
 public class ReviewContainBoard extends Review{
 	private String boardRegDate;
 	private String boardUserId;
-	private int scoreCountSum;
+	private Integer scoreCountSum;
 	private int reviewCount;
 	
 	public ReviewContainBoard() {};
@@ -14,10 +14,10 @@ public class ReviewContainBoard extends Review{
 	public void setReviewCount(int reviewCount) {
 		this.reviewCount = reviewCount;
 	}
-	public int getScoreCountSum() {
+	public Integer getScoreCountSum() {
 		return scoreCountSum;
 	}
-	public void setScoreCountSum(int scoreCountSum) {
+	public void setScoreCountSum(Integer scoreCountSum) {
 		this.scoreCountSum = scoreCountSum;
 	}
 	public String getBoardRegDate() {
@@ -42,7 +42,7 @@ public class ReviewContainBoard extends Review{
 				+ ", getScoreCountSum()=" + getScoreCountSum() + ", getBoardNumber()=" + getBoardNumber() + ", getClass()="
 				+ getClass() + ", getRegDate()=" + getRegDate() + ", getReviewContent()=" + getReviewContent()
 				+ ", getReviewNumber()=" + getReviewNumber() + ", getReviewScore()=" + getReviewScore()
-				+ ", getStatus()=" + getStatus() + ", getUserId()=" + getUserId() + ", hashCode()=" + hashCode()
+				+ ", getStatus()="  + ", getUserId()=" + getUserId() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}
 

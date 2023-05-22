@@ -2,10 +2,10 @@ package com.ssafy.ssafitlog.model.dto;
 
 public class SearchCondition {
 	private String userId;
-	private String type;
+	private String type = "recent";
 	private String word;
-	private String regDate;
-	private int period;
+	private String regDate; // 특정 날짜에 대한 모든 게시글 가져올 때
+	private int period = 7;
 	
 	public SearchCondition() {};
 	

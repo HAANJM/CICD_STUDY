@@ -32,7 +32,9 @@ public class ReviewController {
 	@ApiOperation(value="리뷰 등록", notes = "리뷰 등록 및 stricExp 처리")
 	@PostMapping("/")
 	public ResponseEntity<?> registReview(@RequestBody ReviewContainBoard reviewContainBoard) {
+		System.out.println("시작");
 		if (reviewService.registReview(reviewContainBoard)) {
+			System.out.println("끝");
 			return new ResponseEntity<>(HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -42,7 +44,7 @@ public class ReviewController {
 	@GetMapping("/{boardNumber}")
 	public ResponseEntity<?> searchReviewAll(@PathVariable int boardNumber) {
 		List<Review> result = reviewService.searchReviewAll(boardNumber);
-		return new ResponseEntity<List<Review>>(result, HttpStatus.NO_CONTENT);
+		return new ResponseEntity<List<Review>>(result, HttpStatus.OK);
 	}
 	
 	@ApiOperation(value="리뷰 수정", notes = "리뷰 수정 및 stricExp 처리")

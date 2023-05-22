@@ -24,4 +24,9 @@
 <fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.ReviewService"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.service.UserService"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.util.Encrypt"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.model.dto.RegistUser"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.ssafy.ssafitlog.util.JwtUtil"/>
 </qualifiedTypeNameHistroy>
