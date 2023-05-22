@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=ssafitlog-springboot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ssafy.ssafitlog.model.service{BoardService.java[BoardService" modifiers="513" timestamp="1684480231599"/>
-<typeInfo handle="=ssafitlog-springboot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ssafy.ssafitlog.model.service{ExpService.java[ExpService" modifiers="513" timestamp="1684480237289"/>
-<typeInfo handle="=ssafitlog-springboot/C:\/Users\/SSAFY\/.m2\/repository\/org\/springframework\/spring-aop\/5.3.27\/spring-aop-5.3.27.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-aop=/=/maven.version=/5.3.27=/=/maven.scope=/compile=/&lt;org.springframework.aop.support(ExpressionPointcut.class[ExpressionPointcut" modifiers="1537" timestamp="1682555501682"/>
-<typeInfo handle="=ssafitlog-springboot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ssafy.ssafitlog.model.service{FollowService.java[FollowService" modifiers="513" timestamp="1684480243614"/>
-<typeInfo handle="=ssafitlog-springboot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ssafy.ssafitlog.model.service{LikeService.java[LikeService" modifiers="513" timestamp="1684480251174"/>
-<typeInfo handle="=ssafitlog-springboot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ssafy.ssafitlog.model.service{UserService.java[UserService" modifiers="513" timestamp="1684480265739"/>
-<typeInfo handle="=ssafitlog-springboot/C:\/Program Files\/Zulu\/zulu-8\/jre\/lib\/rt.jar=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.nio.file.attribute(UserDefinedFileAttributeView.class[UserDefinedFileAttributeView" modifiers="1537" timestamp="1539738488000"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

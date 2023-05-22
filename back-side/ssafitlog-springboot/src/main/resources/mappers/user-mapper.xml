@@ -4,5 +4,36 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.saffitlog.model.dao.UserDao">
   
+  	<select id="getUser" parameterType="String" resultType="User">
+  	SELECT *
+  	FROM USER
+  	WHERE USERID = #{userId}
+  	</select>
+  	
+  	<insert id="userRegist" parameterType="User">
+  	INSERT INTO USER(USERID, PASSWORD, EMAIL, NICKNAME, USERNAME)
+  	VALUES(#{userId}, #{password}, #{email}, #{nickName}, #{userName})
+  	</insert>
+  	
+  	<update id="modifyUser" parameterType="User">
+  	
+  	</update>
+  	
+  	<delete id="deleteUser" parameterType="User">
+  	DELETE FROM USER
+  	WHERE USERID = #{userId}
+  	</delete>
+  	
+  	<update id="modifyPassword" parameterType="User">
+  	
+  	</update>
+  	
+  	<select id="searchUserId" parameterType="User" resultType="User">
+  	SELECT USERID
+  	FROM USER
+  	WHERE EMAIL = #{email}
+  	AND USERNAME = #{userName}
+  	</select>
+  
   
   </mapper>

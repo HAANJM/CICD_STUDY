@@ -2,7 +2,82 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.ssafy.saffitlog.model.dao.BoardDao">
-  
-  
-  </mapper>
+  <mapper namespace="com.ssafy.ssafitlog.model.dao.BoardDao">
+  	<insert id="insertBoard" parameterType="Board" keyProperty="boardNumber" useGeneratedKeys="true">
+  		INSERT INTO board (userId, link, scoreCount, boardContent, likeCnt)
+  		VALUE (#{userId}, #{link}, #{scoreCount}, #{boardContent}, #{likeCnt})
+  	</insert>
+  	
+  	  	<select id="selectBoardByLike" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM 'like'
+  		WHERE userId = #{userId} AND DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
+  		ORDER BY regDate
+  	</select>
+  	
+  	<select id="selectBoardByFollow" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY) AND
+  		userId in (SELECT followTo FROM follow WHERE followFrom = #{userId})
+  		ORDER BY regDate
+  	</select>
+  	
+  	<select id="selectBoardByRecent" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
+  		ORDER BY regDate
+  	</select>
+  	
+   	<select id="selectBoardByHot" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
+  		ORDER BY likeCnt
+  	</select>
+  	
+   	<select id="selectBoardByWord" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY) AND (
+  		boardTitle LIKE CONCAT('%', #{word}, '%') OR 
+  		boardContent LIKE CONCAT('%', #{word}, '%'))
+  		ORDER BY regDate
+  	</select>
+  	
+   	<select id="selectBoardByDate" parameterType="SearchCondition" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}
+  	</select>
+  	
+   	<select id="selectBoard" parameterType="int" resultType="Board">
+  		SELECT *
+  		FROM board
+  		WHERE boardNumber = #{boardNumber}
+  	</select>
+  	
+  	<update id="updateBoard" parameterType="Board">
+  		UPDATE board
+  		SET boardTitle = #{boardTitle}, boardContent = #{boardContent},
+  		link = #{link}, scoreCount = #{scoreCount}, likeCnt = #{likeCnt}
+  		WHERE boardNumber = #{boardNumber}
+  	</update>
+  	
+  	<delete id="deleteBoard" parameterType="int">
+  		DELETE FROM board
+  		WHERE boardNumber = #{boardNumber}
+  	</delete>
+  	
+  	<update id="updateScoreCount" parameterType="ReviewContainBoard">
+  		UPDATE board
+  		SET scoreCount = scoreCount + #{reviewScore}
+  		WHERE boardNumber = #{boardNumber}
+  		<selectKey keyProperty="scoreCounttSum" resultType="int" order="AFTER">
+  			SELECT SUM(scoreCount)
+  			FROM board
+  			WHERE DATE(regDate) = DATE(#{boardRegDate}) AND userId = #{boardUserId}
+  		</selectKey>
+  	</update>
+</mapper>

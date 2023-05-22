@@ -3,6 +3,34 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.saffitlog.model.dao.ReviewDao">
+	<insert id="insertReview" parameterType="Review">
+		INSERT INTO review (boardContent, reviewScore, status)
+		VALUE (#{boardContent}. #{reviewScore}, #status})
+	</insert>  
   
+  	 <update id="updateReview" parameterType="Review">
+  		UPDATE review
+  		SET reviewContent = #{reviewContent}, reviewScore = #{reviewScore},
+  		status = #{status}
+  		WHERE reviewNumber = #{reviewNumber}
+  	</update>
   
+  	<select id="selectReivew" parameterType="int" resultType="Review">
+  		SELECT *
+  		FROM review
+  		WHERE reviewNumber = #{reviewNumber}
+  	</select>
+  
+  	<select id="selectReviewAll" parameterType="int" resultType="Review">
+  		SELECT *
+  		FROM review
+  		WHERE boardNumber = #{boardNumber}
+  	</select>
+  	
+  	<delete id="deleteReview" parameterType="Review">
+  		DELETE FROM review
+  		WHERE reviewNumber = #{reviewNumber}
+  	</delete>
+  	
+
   </mapper>

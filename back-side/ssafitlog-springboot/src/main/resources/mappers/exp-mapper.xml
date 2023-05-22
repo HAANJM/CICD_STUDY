@@ -4,5 +4,36 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.saffitlog.model.dao.ExpDao">
   
-  
+  	<insert id="insertExp" parameterType="Exp">
+  		INSERT INTO exp (stricExp, reviewExp, userId)
+  		VALUE (#{stricExp}, #{reviewExp}, #{userId})
+  	</insert>
+  	
+  	<update id="updateStricExp" parameterType="StricExpDiff">
+  		<selectKey keyProperty="diffStricExp" resultType="int" order="BEFORE">
+			SELECT #{stricExp} - stricExp
+			FROM exp
+			WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId} 		
+  		</selectKey>
+  		UPDATE exp
+  		SET stricExp = #{stricExp}
+		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}
+  	</update>
+  	
+	<update id="updateReviewExp" parameterType="Exp">
+		UPDATE exp
+		SET reviewExp = reviewExp + #{reviewExp}
+		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}
+	</update> 
+	
+	<select id="selectAllExp" parameterType="String" resultType="Exp">
+		SELECT *
+		FROM exp
+		WHERE userId = #{userId}
+	</select>
+	
+	<delete id="deleteExp" parameterType="String">
+		DELETE FROM exp
+		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}
+	</delete>  	
   </mapper>
