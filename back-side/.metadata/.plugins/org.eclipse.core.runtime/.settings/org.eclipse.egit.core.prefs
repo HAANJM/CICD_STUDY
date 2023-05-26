@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\SSAFITLOG\\EHHTEAM\\.git;D\:\\SSAFITLOGWORKSPACE\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\SSAFITLOG\\EHHTEAM\\.git;D\:\\SSAFITLOGWORKSPACE\\.git;
+GitRepositoriesView.GitDirectories=C\:\\SSAFITLOG\\EHHTEAM\\.git;D\:\\SSAFITLOGWORKSPACE\\.git;C\:\\SSAFITLOG\\.git;C\:\\test\\ttest\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\SSAFITLOG\\EHHTEAM\\.git;D\:\\SSAFITLOGWORKSPACE\\.git;C\:\\SSAFITLOG\\.git;C\:\\test\\ttest\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

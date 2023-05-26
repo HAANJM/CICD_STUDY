@@ -127,6 +127,8 @@ CREATE TABLE IF NOT EXISTS `ssafitlog`.`review` (
   `reviewNumber` INT NOT NULL AUTO_INCREMENT,
   `boardNumber` INT NOT NULL,
   `userId` VARCHAR(20) NOT NULL,
+  `nickName` VARCHAR(20) NOT NULL,
+  `img` VARCHAR(20) NULL,
   `regDate` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `reviewContent` VARCHAR(600) NOT NULL,
   `reviewScore` INT NOT NULL,

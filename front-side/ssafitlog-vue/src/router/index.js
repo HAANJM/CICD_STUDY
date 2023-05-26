@@ -4,12 +4,16 @@ import MainView from "../views/MainView.vue";
 import SsafitView from "../views/SsafitView.vue";
 import SsalogView from "../views/SsalogHomeView.vue";
 import SsalogProfileView from "../views/SsalogProfileView.vue";
-import SsalogDetailView from "../views/SsalogDetailView.vue";
-import UserLogin from "@/components/user/userLogin.vue";
-import UserRegist from "@/components/user/userRegist.vue";
-import UserSearchId from "@/components/user/userSearchId.vue";
-import UserSearchPassword from "@/components/user/userSearchPassword.vue";
-import UserUpdatePassword from "@/components/user/userUpdatePassword.vue";
+import UserLogin from "@/components/user/UserLogin.vue";
+import UserRegist from "@/components/user/UserRegist.vue";
+import UserSearchId from "@/components/user/UserSearchId.vue";
+import UserSearchPassword from "@/components/user/UserSearchPassword.vue";
+import UserUpdatePassword from "@/components/user/UserUpdatePassword.vue";
+import BoardRegist from "@/components/board/BoardRegist.vue";
+import BoardDetail from "@/components/board/BoardDetail.vue";
+import SsafitBoardDetail from "@/components/board/SsafitBoardDetail.vue";
+import UserDelete from "@/components/user/UserDelete.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -54,14 +58,29 @@ const routes = [
     component: UserUpdatePassword,
   },
   {
-    path: "/SsalogProfile",
+    path: "/SsalogProfile/:id",
     name: "SsalogProfile",
     component: SsalogProfileView,
   },
   {
-    path: "/ssalogDetail",
-    name: "SsalogDetail",
-    component: SsalogDetailView
+    path: "/boardRegist",
+    name: "BoardRegist",
+    component: BoardRegist,
+  },
+  {
+    path: "/boardDetail",
+    name: "BoardDetail",
+    component: BoardDetail,
+  },
+  {
+    path: "/ssafitBoardDetail",
+    name: "SsafitBoardDetail",
+    component: SsafitBoardDetail,
+  },
+  {
+    path: "/deleteUser",
+    name: "UserDelete",
+    component: UserDelete,
   }
 ];
 

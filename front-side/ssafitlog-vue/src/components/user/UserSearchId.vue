@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <b-card title="아이디 찾기" tag="article" style="width: 400px" class="mb-2">
-      <b-form @submit="onSubmit" v-if="show">
+      <b-form v-if="show">
         <b-form-group id="input-group-1" label="이름" label-for="input-1">
           <b-form-input
             id="input-1"
@@ -16,24 +16,44 @@
           <b-form-input
             id="input-2"
             v-model="user.email"
-            type="password"
+            type="email"
             placeholder="이메일을 작성해주세요."
             required
           ></b-form-input>
         </b-form-group>
 
-        <span><router-link :to="{}">비밀번호 찾기</router-link></span>
+        <span
+          ><router-link :to="{ name: 'UserSearchPassword' }"
+            >비밀번호 찾기</router-link
+          ></span
+        >
         <br /><br />
 
-        <b-button type="submit" class="btn" variant="primary"
+        <b-button class="btn" variant="primary" @click="searchId"
           >아이디 찾기</b-button
         >
+        <br /><br />
+        <b-form-group
+          id="input-group-2 userIdDiv"
+          label="아이디"
+          label-for="input-2"
+        >
+          <b-form-input
+            id="input-2"
+            v-model="searchedId"
+            type="text"
+            placeholder="아이디입니다."
+            readonly
+          ></b-form-input>
+        </b-form-group>
       </b-form>
     </b-card>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "UserSearchId",
   data() {
@@ -50,19 +70,12 @@ export default {
       event.preventDefault();
       alert(JSON.stringify(this.form));
     },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
+    searchId() {
+      this.$store.dispatch("searchId", this.user);
     },
+  },
+  computed: {
+    ...mapState(["searchedId"]),
   },
 };
 </script>

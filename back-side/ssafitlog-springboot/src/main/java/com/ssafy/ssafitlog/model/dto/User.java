@@ -14,6 +14,7 @@ public class User {
 	private int level;
 	private String tier;
 	private String userUserStatus;
+	private int reviewCount;
 	public User() {
 		super();
 	}
@@ -32,6 +33,20 @@ public class User {
 		this.level = level;
 		this.tier = tier;
 		this.userUserStatus = userUserStatus;
+	}
+	
+	
+	public String getUserUserStatus() {
+		return userUserStatus;
+	}
+	public void setUserUserStatus(String userUserStatus) {
+		this.userUserStatus = userUserStatus;
+	}
+	public int getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(int reviewCount) {
+		this.reviewCount = reviewCount;
 	}
 	public String getUserId() {
 		return userId;
@@ -109,9 +124,8 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", userComment=" + userComment + ", img=" + img + ", oriImg=" + oriImg
 				+ ", password=" + password + ", email=" + email + ", nickName=" + nickName + ", userName=" + userName
-				+ ", totalExp=" + totalExp + ", level=" + level + ", tier=" + tier + ", userUserStatus=" + userUserStatus + "]";
+				+ ", totalExp=" + totalExp + ", level=" + level + ", tier=" + tier + ", userUserStatus="
+				+ userUserStatus + ", reviewCount=" + reviewCount + "]";
 	}
-	
-	
 
 }

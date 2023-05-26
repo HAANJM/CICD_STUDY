@@ -32,5 +32,11 @@ public class FavoriteServiceImpl implements FavoriteService {
 		return favoriteDao.deleteFavorite(favorite) == 1;
 	}
 	
-	
+	@Override
+	public boolean searchFavorite(Favorite favorite) {
+		if (favoriteDao.selectFavorite(favorite) == 1) {
+			return true;
+		}
+		return false;
+	}
 }

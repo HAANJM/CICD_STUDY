@@ -11,7 +11,7 @@
   	</select>
   	
   	<select id="getUserByEmail" parameterType="String" resultType="int">
-  	SELECT *
+  	SELECT COUNT(*)
   	FROM USER
   	WHERE EMAIL = #{email}
   	</select>
@@ -25,9 +25,8 @@
   	UPDATE USER
   	SET
   		IMG = #{img},
-  		USERCOMMENT = #{userComment},
-  		NICKNAME = #{nickName}
-  	WHERE USERID = #{userId}
+  		USERCOMMENT = #{userComment}
+  	WHERE userId = #{userId}
   	</update>
   	
   	<delete id="deleteUser" parameterType="User">
@@ -66,4 +65,16 @@
   	SET totalExp = totalExp - 1, reviewCount = reviewCount - 1
   	WHERE userId = #{userId}
   	</update>
+  	
+  	<select id="selectUserImg" parameterType="String" resultType="String">
+  	SELECT img
+  	FROM USER
+  	WHERE userId = #{userId}
+  	</select>
+  	
+  	<select id="selectUserReviewCount" parameterType="String" resultType="int">
+  		SELECT reviewCount
+  		FROM user
+  		WHERE userId = #{userId}
+  	</select>
   </mapper>

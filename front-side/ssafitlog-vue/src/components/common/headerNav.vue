@@ -5,46 +5,55 @@
         <router-link to="/" class="logo">SSAFITLOG</router-link>
       </div>
       <div v-if="getUser">
-        <router-link :to="{ name: 'SsalogProfile' }">마이페이지</router-link>
+        <a href="#">{{ loginUser.userName }} 님 환영합니다.</a>
+        <router-link :to="`/SsalogProfile/${JSON.stringify(loginUser)}`">마이페이지</router-link>
         <a href="#" @click="logout">로그아웃</a>
+        <router-link :to="{ name: 'BoardRegist' }"> 글 등록</router-link>
       </div>
       <div v-else>
         <router-link :to="{ name: 'UserLogin' }">로그인</router-link>
         <router-link :to="{ name: 'UserRegist' }">회원가입</router-link>
       </div>
+      <div></div>
     </nav>
   </header>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
-  name: "headerNav",
+  name: "HeaderNav",
 
   data() {
-    return {
-
-    };
+    return {};
   },
 
   mounted() {},
 
   methods: {
-    logout(){
+    logout() {
       this.$store.commit("LOGOUT");
+    },
+    selectMine() {
+      // alert('a')
+      console.log("asfsaf", this.$store.state.loginUser)
+      this.$store.state.selectUser = this.$store.state.loginUser;
     }
   },
-  computed:{
+  created() {
+    this.$store.state.loginUser = JSON.parse(localStorage.getItem("loginUser"));
+  },
+  computed: {
     ...mapState(["loginUser"]),
-    getUser(){
-      if(this.loginUser){
+    getUser() {
+      if (this.loginUser) {
         return true;
-      }else{
+      } else {
         return false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

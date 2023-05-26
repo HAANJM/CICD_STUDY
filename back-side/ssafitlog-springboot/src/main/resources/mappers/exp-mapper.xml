@@ -32,6 +32,12 @@
 		WHERE userId = #{userId}
 	</select>
 	
+	<select id="selectStric" parameterType="String" resultType="Exp">
+		SELECT DATE(regDate) as regDate, stricExp
+		FROM exp
+		WHERE userId = #{userId} AND DATE(regDate) >= DATE_SUB(NOW(), INTERVAL 365 DAY)
+	</select>
+	
 	<delete id="deleteExp" parameterType="String">
 		DELETE FROM exp
 		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}

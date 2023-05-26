@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,17 @@ public class FavoriteController {
 	private FavoriteService likeService;
 	
 	@ApiOperation(value="좋아요 등록", notes = "좋아요 등록")
+	@GetMapping("")
+	public ResponseEntity<?> searchLike(Favorite favorite) {
+		if (likeService.searchFavorite(favorite)) {
+			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+		}
+		return new ResponseEntity<Boolean>(false, HttpStatus.NO_CONTENT);
+	}
+	
+	@ApiOperation(value="좋아요 등록", notes = "좋아요 등록")
 	@PostMapping("")
-	public ResponseEntity<?> registLike(@RequestBody Favorite favorite) {
+	public ResponseEntity<?> registLike(Favorite favorite) {
 		if (likeService.registFavorite(favorite)) {
 			return new ResponseEntity<>(HttpStatus.OK);
 		}

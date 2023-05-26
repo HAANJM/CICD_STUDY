@@ -6,4 +6,6 @@ public interface FavoriteService {
 	boolean registFavorite(Favorite favorite);
 	
 	boolean deleteFavorite(Favorite favorite);
+	
+	boolean searchFavorite(Favorite favorite);
 }

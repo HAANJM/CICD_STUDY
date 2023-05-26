@@ -21,3 +21,4 @@ new Vue({
   router,
   render: (h) => h(App),
 }).$mount("#app");
+// const API_KEY = "AIzaSyArLUiigknT0qcs4M33dyTAt766ENRtdbM";

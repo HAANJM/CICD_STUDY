@@ -30,7 +30,7 @@ public class ReviewController {
 	private ReviewService reviewService;
 	
 	@ApiOperation(value="리뷰 등록", notes = "리뷰 등록 및 stricExp 처리")
-	@PostMapping("/")
+	@PostMapping("")
 	public ResponseEntity<?> registReview(@RequestBody ReviewContainBoard reviewContainBoard) {
 		System.out.println("시작");
 		if (reviewService.registReview(reviewContainBoard)) {

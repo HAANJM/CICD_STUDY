@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.ssafitlog.model.dao.ReviewDao">
 	<insert id="insertReview" parameterType="Review" keyProperty="reviewNumber" useGeneratedKeys="true">
-		INSERT INTO review (reviewContent, reviewScore, reviewStatus, boardNumber, userId)
-		VALUE (#{reviewContent}, #{reviewScore}, #{reviewStatus}, #{boardNumber}, #{userId})
+		INSERT INTO review (reviewContent, reviewScore, reviewStatus, boardNumber, userId, nickName, img)
+		SELECT  #{reviewContent}, #{reviewScore}, #{reviewStatus}, #{boardNumber}, #{userId}, img, nickName FROM user WHERE userid = #{userId};
 	</insert>  
   
   	 <update id="updateReview" parameterType="Review">

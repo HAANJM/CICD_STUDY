@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.ssafy.ssafitlog.model.dao.BoardDao">
   	<insert id="insertBoard" parameterType="Board" keyProperty="boardNumber" useGeneratedKeys="true">
-  		INSERT INTO board (userId, link, scoreCount, boardContent, favoriteCnt, boardTitle)
-  		VALUE (#{userId}, #{link}, #{scoreCount}, #{boardContent}, #{favoriteCnt}, #{boardTitle})
+  		INSERT INTO board (userId, link, scoreCount, boardContent, favoriteCount, boardTitle)
+  		VALUE (#{userId}, #{link}, #{scoreCount}, #{boardContent}, #{favoriteCount}, #{boardTitle})
   	</insert>
   	
   	  <select id="selectBoardByFavorite" parameterType="SearchCondition" resultType="Board">
@@ -35,7 +35,7 @@
   		SELECT *
   		FROM board
   		WHERE DATE(regDate) >= DATE_SUB(NOW(), INTERVAL #{period} DAY)
-  		ORDER BY facoriteCnt DESC
+  		ORDER BY favoriteCount DESC
   	</select>
   	
    	<select id="selectBoardByWord" parameterType="SearchCondition" resultType="Board">
@@ -51,6 +51,7 @@
   		SELECT *
   		FROM board
   		WHERE DATE(regDate) = DATE(#{regDate}) AND userId = #{userId}
+  		ORDER BY regDate
   	</select>
   	
    	<select id="selectBoard" parameterType="int" resultType="Board">

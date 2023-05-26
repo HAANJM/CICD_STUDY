@@ -9,7 +9,7 @@ import com.ssafy.ssafitlog.model.dto.SearchCondition;
 
 public interface BoardService {
 	
-	boolean registBoard(Board board);
+	Board registBoard(Board board);
 	
 	boolean modifyBoard(Board board);
 	

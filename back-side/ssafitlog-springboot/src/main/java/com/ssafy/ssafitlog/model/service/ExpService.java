@@ -20,4 +20,6 @@ public interface ExpService {
 	boolean deleteExp(String regDate);
 	
 	int convertScoreToExp(int scoreCountSum);
+	
+	List<Exp> selectStric(String userId);
 }

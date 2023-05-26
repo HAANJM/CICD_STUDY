@@ -6,4 +6,6 @@ public interface FavoriteDao {
 	int insertFavorite(Favorite favorite);
 	
 	int deleteFavorite(Favorite favorite);
+	
+	int selectFavorite(Favorite favorite);
 }

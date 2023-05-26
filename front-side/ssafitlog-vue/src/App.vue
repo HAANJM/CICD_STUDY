@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import headerNav from "@/components/common/headerNav.vue";
-import footerNav from "@/components/common/footerNav.vue";
+import HeaderNav from "@/components/common/HeaderNav.vue";
+import FooterNav from "@/components/common/FooterNav.vue";
 
 export default {
   name: "App",
   components: {
-    headerNav,
-    footerNav,
+    HeaderNav,
+    FooterNav,
   },
 };
 </script>

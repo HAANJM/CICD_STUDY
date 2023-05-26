@@ -56,5 +56,10 @@ public class ExpServiceImpl implements ExpService {
 		return 5 * EXP;
 	}
 
+	@Override
+	public List<Exp> selectStric(String userId) {
+		return expDao.selectStric(userId);
+	}
+
 	
 }

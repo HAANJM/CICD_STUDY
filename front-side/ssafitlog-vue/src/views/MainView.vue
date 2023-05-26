@@ -15,6 +15,7 @@
         <b-button href="/SSAFIT" variant="primary">SSAFIT</b-button>
       </b-card>
     </div>
+    &nbsp; &nbsp; &nbsp;
     <div>
       <b-card
         title="SSALOG"
@@ -56,6 +57,7 @@ export default {
   align-items: center;
   height: 800px;
 }
-#container > div {
+.mb-2{
+  border : 5px solid #071844;
 }
 </style>

@@ -15,4 +15,6 @@ public interface ExpDao {
 	List<Exp> selectAllExp(String userId);
 	
 	int deleteExp(String regDate);
+	
+	List<Exp> selectStric(String userId);
 }

@@ -32,10 +32,11 @@ public class BoardController {
 	@ApiOperation(value="게시글 작성", notes = "게시글 작성")
 	@PostMapping("")
 	public ResponseEntity<?> registBoard(@RequestBody Board board) {
-		if (boardService.registBoard(board)) {
-			return new ResponseEntity<>(HttpStatus.CREATED);
+		Board result = boardService.registBoard(board);
+		if (result == null) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Board>(result, HttpStatus.CREATED);
 	}
 	
 	@ApiOperation(value="게시글 조회", notes = "검색 조건도 넣으면 같이 가져옴")
@@ -47,7 +48,7 @@ public class BoardController {
 	
 	@ApiOperation(value="스트릭 정보 가져오기", notes = "스트릭 선택시 그에 따른 게시글 다 긁어오기") // 작업해야함
 	@GetMapping("/date")
-	public ResponseEntity<?> searchBoardByDate(@RequestBody SearchCondition condition) {
+	public ResponseEntity<?> searchBoardByDate(SearchCondition condition) {
 		List<Board> result = boardService.searchBoardByDate(condition);
 		return new ResponseEntity<List<Board>>(result, HttpStatus.OK);
 	}

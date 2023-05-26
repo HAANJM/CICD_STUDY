@@ -24,4 +24,8 @@ public interface UserDao {
 	int upReviewExp(StricExpDiff exp);
 	
 	int downReviewExp(StricExpDiff exp);
+	
+	String selectUserImg(String userId);
+	
+	Integer selectUserReviewCount(String userId);
 }

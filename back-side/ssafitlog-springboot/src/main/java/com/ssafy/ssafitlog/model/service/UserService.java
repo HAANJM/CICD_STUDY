@@ -24,4 +24,8 @@ public interface UserService {
 	int upReviewExp(StricExpDiff exp);
 	
 	int downReviewExp(StricExpDiff exp);
+	
+	String searchUserImg(String userId);
+	
+	int searchUserReviewCount(String userId);
 }

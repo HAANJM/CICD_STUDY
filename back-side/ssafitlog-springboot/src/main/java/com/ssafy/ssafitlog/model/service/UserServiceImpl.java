@@ -62,4 +62,14 @@ public class UserServiceImpl implements UserService {
 	public int downReviewExp(StricExpDiff exp) {
 		return userDao.downReviewExp(exp);
 	}
+
+	@Override
+	public String searchUserImg(String userId) {
+		return userDao.selectUserImg(userId);
+	}
+
+	@Override
+	public int searchUserReviewCount(String userId) {
+		return userDao.selectUserReviewCount(userId);
+	}
 }

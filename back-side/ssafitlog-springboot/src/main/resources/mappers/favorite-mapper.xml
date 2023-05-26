@@ -12,4 +12,10 @@
   		DELETE FROM favorite
   		WHERE userId = #{userId} AND boardNumber = #{boardNumber}
   	</delete>
+  	
+  	<select id="selectFavorite" parameterType="Favorite" resultType="int">
+  		SELECT COUNT(userId)
+  		FROM favorite
+  		WHERE userId = #{userId} AND boardNumber = #{boardNumber}
+  	</select>
   </mapper>

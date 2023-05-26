@@ -51,4 +51,14 @@ public class ExpController {
 		}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+	
+	@ApiOperation(value="스트릭 정보 가져오기", notes = "게시글 0, 댓글 0, 로그아웃할때인데 필요할까? 구현할 수 있을까?")
+	@GetMapping("stric/{userId}")
+	public ResponseEntity<?> searchStric(@PathVariable String userId) {
+		List<Exp> result = expService.selectStric(userId);
+		if (result != null) {
+			return new ResponseEntity<List<Exp>>(result, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 }

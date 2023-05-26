@@ -1,19 +1,19 @@
 <template>
   <div id="container">
-    <profile-personal-info></profile-personal-info>
-    <profile-info></profile-info>
+    <profile-personal-info :selectUserTransfer="`${$route.params.id}`"></profile-personal-info>
+    <profile-info :selectUserTransfer2="`${$route.params.id}`"></profile-info>
   </div>
 </template>
 
 <script>
-import profileInfo from '@/components/profile/profileInfo.vue';
-import profilePersonalInfo from '@/components/profile/profilePersonalInfo.vue';
-
+import ProfileInfo from "@/components/profile/ProfileInfo.vue";
+import ProfilePersonalInfo from "@/components/profile/ProfilePersonalInfo.vue";
+import { mapState } from "vuex";
 export default {
   name: "SsalogProfile",
-  components:{
-    profileInfo,
-    profilePersonalInfo,
+  components: {
+    ProfileInfo,
+    ProfilePersonalInfo,
   },
 
   data() {
@@ -23,13 +23,22 @@ export default {
   mounted() {},
 
   methods: {},
+  created() {
+    this.$store.state.expArr = JSON.parse(localStorage.getItem("expArr"));
+    console.log("abc",this.loginUser.userId);
+    console.log("abc",this.$route.params.id)
+    // this.$store.dispatch("getReviewCnt", this.loginUser.userId);
+  },
+  computed: {
+    ...mapState(["loginUser"]),
+  },
 };
 </script>
 
 <style scoped>
 #container {
   width: 100%;
-  height: 1200px;
+  height: 125vw;
   margin-top: 20px;
 }
 </style>

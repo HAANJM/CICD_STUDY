@@ -1,88 +1,82 @@
 <template>
-  <div class="container">
-    <footer
-      class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
-    >
-      <div class="col mb-3">
-        <a
-          href="/"
-          class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
-          style="color: rgb(233, 220, 1)"
-        >
-          SSAFITLOG
-        </a>
+  <footer
+    class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
+  >
+    <div class="col mb-3">
+      <div style="margin-left: 50px">
+        <h4>
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+            style="color: rgb(233, 220, 1)"
+          >
+            SSAFITLOG
+          </a>
+        </h4>
         <p class="text-body-secondary">
           &copy; 2023 SSAFY 9기 5반<br />
           김봉준 한장민
         </p>
       </div>
+    </div>
 
-      <div class="col mb-3"></div>
+    <div class="col mb-3"></div>
 
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-          </li>
-        </ul>
-      </div>
+    <div class="col mb-3">
+      <h5>SSAFITLOG</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">양명균</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">김봉준</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">한장민</a>
+        </li>
+      </ul>
+    </div>
 
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-          </li>
-        </ul>
-      </div>
+    <div class="col mb-3">
+      <h5>회사 정보</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">오시는 길</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">이용약관</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary"
+            >개인정보처리방침</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+        </li>
+      </ul>
+    </div>
 
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </div>
+    <div class="col mb-3">
+      <h5></h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary"
+            >본 사이트의 콘텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사,
+            배포 등을 금합니다.</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link p-0 text-body-secondary"
+            >Copyright © SAMSUNG All Rights Reserved.</a
+          >
+        </li>
+      </ul>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -100,9 +94,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
+footer {
   background-color: #071844;
-  width: 100%;
+  width: 100vw;
 }
 .text-body-secondary {
   color: rgb(233, 220, 1);
