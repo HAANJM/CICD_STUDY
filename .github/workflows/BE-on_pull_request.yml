@@ -34,4 +34,4 @@ jobs:
 
       # 빌드 명령어 실행
       - name: Build with Maven
-        run: \back-side\ssafitlog-springboot && mvn -B package --file pom.xml
+        run: /back-side/ssafitlog-springboot && mvn -B package --file pom.xml
