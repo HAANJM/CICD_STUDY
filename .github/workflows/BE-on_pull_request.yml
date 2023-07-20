@@ -20,7 +20,7 @@ jobs:
     # 실행할 명령들을 순서에 맞게 나열
     steps:
       # 현재 프로젝트로 작업영역 설정
-      # 봇이 있는 환경에서 무라구요?
+      # 봇이 있는 환경에서 무라구요 gggg
       - name: Checkout
         uses: actions/checkout@v3
 
